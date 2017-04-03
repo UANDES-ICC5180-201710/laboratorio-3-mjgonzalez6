@@ -12,6 +12,12 @@ class PeopleController < ApplicationController
   def show
   end
 
+  def get_professor
+
+    @person = Person.find(params[:is_professor])
+
+  end
+
   # GET /people/new
   def new
     @person = Person.new
@@ -69,6 +75,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:first_name, :last_name, :email)
+      params.require(:person).permit(:first_name, :last_name, :email, :is_professor)
     end
 end
